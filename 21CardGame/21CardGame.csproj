@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{5B21E160-80C8-4C5F-9879-0ED9EBCC69BA}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_21CardGame</RootNamespace>
+    <AssemblyName>21CardGame</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>21CardGame_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Business Logic\Card.cs" />
+    <Compile Include="Business Logic\Multiplayer\CardDeck.cs" />
+    <Compile Include="Business Logic\Multiplayer\CardGame.cs" />
+    <Compile Include="Business Logic\SinglePlayer\SinglePlayerCardDeck.cs" />
+    <Compile Include="Business Logic\SinglePlayer\SinglePlayerCardGame.cs" />
+    <Compile Include="Presentation Logic\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Logic\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Logic\SinglePlayerGamePage.xaml.cs">
+      <DependentUpon>SinglePlayerGamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Logic\StatsPage.xaml.cs">
+      <DependentUpon>StatsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Logic\StatsSinglePage.xaml.cs">
+      <DependentUpon>StatsSinglePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="21CardGame_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Card Assets\c01.png" />
+    <Content Include="Assets\Card Assets\c02.png" />
+    <Content Include="Assets\Card Assets\c03.png" />
+    <Content Include="Assets\Card Assets\c04.png" />
+    <Content Include="Assets\Card Assets\c05.png" />
+    <Content Include="Assets\Card Assets\c06.png" />
+    <Content Include="Assets\Card Assets\c07.png" />
+    <Content Include="Assets\Card Assets\c08.png" />
+    <Content Include="Assets\Card Assets\c09.png" />
+    <Content Include="Assets\Card Assets\c10.png" />
+    <Content Include="Assets\Card Assets\c11.png" />
+    <Content Include="Assets\Card Assets\c12.png" />
+    <Content Include="Assets\Card Assets\c13.png" />
+    <Content Include="Assets\Card Assets\Card-Back-01.png" />
+    <Content Include="Assets\Card Assets\cardBack_blue1.png" />
+    <Content Include="Assets\Card Assets\cardBack_blue2.png" />
+    <Content Include="Assets\Card Assets\cardBack_blue3.png" />
+    <Content Include="Assets\Card Assets\cardBack_blue4.png" />
+    <Content Include="Assets\Card Assets\cardBack_blue5.png" />
+    <Content Include="Assets\Card Assets\cardBack_green1.png" />
+    <Content Include="Assets\Card Assets\cardBack_green2.png" />
+    <Content Include="Assets\Card Assets\cardBack_green3.png" />
+    <Content Include="Assets\Card Assets\cardBack_green4.png" />
+    <Content Include="Assets\Card Assets\cardBack_green5.png" />
+    <Content Include="Assets\Card Assets\cardBack_red1.png" />
+    <Content Include="Assets\Card Assets\cardBack_red2.png" />
+    <Content Include="Assets\Card Assets\cardBack_red3.png" />
+    <Content Include="Assets\Card Assets\cardBack_red4.png" />
+    <Content Include="Assets\Card Assets\cardBack_red5.png" />
+    <Content Include="Assets\Card Assets\d01.png" />
+    <Content Include="Assets\Card Assets\d02.png" />
+    <Content Include="Assets\Card Assets\d03.png" />
+    <Content Include="Assets\Card Assets\d04.png" />
+    <Content Include="Assets\Card Assets\d05.png" />
+    <Content Include="Assets\Card Assets\d06.png" />
+    <Content Include="Assets\Card Assets\d07.png" />
+    <Content Include="Assets\Card Assets\d08.png" />
+    <Content Include="Assets\Card Assets\d09.png" />
+    <Content Include="Assets\Card Assets\d10.png" />
+    <Content Include="Assets\Card Assets\d11.png" />
+    <Content Include="Assets\Card Assets\d12.png" />
+    <Content Include="Assets\Card Assets\d13.png" />
+    <Content Include="Assets\Card Assets\h01.png" />
+    <Content Include="Assets\Card Assets\h02.png" />
+    <Content Include="Assets\Card Assets\h03.png" />
+    <Content Include="Assets\Card Assets\h04.png" />
+    <Content Include="Assets\Card Assets\h05.png" />
+    <Content Include="Assets\Card Assets\h06.png" />
+    <Content Include="Assets\Card Assets\h07.png" />
+    <Content Include="Assets\Card Assets\h08.png" />
+    <Content Include="Assets\Card Assets\h09.png" />
+    <Content Include="Assets\Card Assets\h10.png" />
+    <Content Include="Assets\Card Assets\h11.png" />
+    <Content Include="Assets\Card Assets\h12.png" />
+    <Content Include="Assets\Card Assets\h13.png" />
+    <Content Include="Assets\Card Assets\playing-card-back.jpg" />
+    <Content Include="Assets\Card Assets\s01.png" />
+    <Content Include="Assets\Card Assets\s02.png" />
+    <Content Include="Assets\Card Assets\s03.png" />
+    <Content Include="Assets\Card Assets\s04.png" />
+    <Content Include="Assets\Card Assets\s05.png" />
+    <Content Include="Assets\Card Assets\s06.png" />
+    <Content Include="Assets\Card Assets\s07.png" />
+    <Content Include="Assets\Card Assets\s08.png" />
+    <Content Include="Assets\Card Assets\s09.png" />
+    <Content Include="Assets\Card Assets\s10.png" />
+    <Content Include="Assets\Card Assets\s11.png" />
+    <Content Include="Assets\Card Assets\s12.png" />
+    <Content Include="Assets\Card Assets\s13.png" />
+    <Content Include="Assets\rules.txt" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Presentation Logic\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation Logic\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation Logic\SinglePlayerGamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation Logic\StatsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation Logic\StatsSinglePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
